@@ -1,6 +1,6 @@
 <div class="container">
     <h2>User Settings</h2>
-    <form>
+    <form #form = "ngForm"> <!-- ngForm object is assigned to the variable form -->
         <div class="form-group">
         <label for="name"></label>
         <input id="name" name="name" class="form-control" type="text" placeholder="Name">
@@ -59,6 +59,6 @@
     </form>
 </div>
 
-
+  {{form | json}} <!-- printing ngForm value with interpolation and using pipe display format is json  -->
 
 <!--Because we didn't import BootStrap and used it in angular.json we need to restart app-->
