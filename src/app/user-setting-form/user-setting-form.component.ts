@@ -11,9 +11,10 @@ export class UserSettingFormComponent implements OnInit {
   userSettings: UserSettings =  {
     name:"Milton",
     emailOffers: true,
-    interfaceStyle: "Light",
+    interfaceStyle: "dark",
     subscriptionType: "Monthly",            //we have created an object with predefined properties
-    notes: "Some notes"
+    notes: "Some notes",
+    date: null
   }
   constructor() { }
   ngOnInit(): void {
