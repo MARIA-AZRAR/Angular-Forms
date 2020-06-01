@@ -1,10 +1,10 @@
 <div class="container">
     <h2>User Settings</h2>
 
-    <form #form = "ngForm"> <!-- ngForm object is assigned to the variable form -->
+    <form #form = "ngForm" ngNativeValidate> <!-- ngForm object is assigned to the variable form ngNativeValidate is disabled by default and we should let it be disabled-->
         <div class="form-group">
         <label for="name"></label>
-        <input id="name" name="name" class="form-control" type="text" placeholder="Name" [(ngModel)] = "userSettings.name">
+        <input id="name" name="name" class="form-control" type="text" placeholder="Name" [(ngModel)] = "userSettings.name" required pattern="M.*A" minlength="3" maxlength="5">
         </div>
 
         <div class="form-check form-group">  <!--  form-group will make space around the checkBox  -->
