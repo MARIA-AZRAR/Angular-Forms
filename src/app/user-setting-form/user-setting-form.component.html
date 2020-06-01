@@ -4,14 +4,11 @@
     <form #form = "ngForm" ngNativeValidate> <!-- ngForm object is assigned to the variable form ngNativeValidate is disabled by default and we should let it be disabled-->
         <div class="form-group">
         <label for="name"></label>
-        <input id="name" name="name" class="form-control" type="text" placeholder="Name" [(ngModel)] = "userSettings.name" required pattern="M.*A" #propertyTest = "ngModel">
+        <input id="name" name="name" class="form-control" type="text" placeholder="Name" [(ngModel)] = "userSettings.name" required #nameField = "ngModel">
+        <div [hidden] = "nameField.valid || nameField.untouched" class="alert alert-danger">
+          Enter a Name
         </div>
-      <h3>dirty: {{propertyTest.dirty}} </h3>
-      <h3>pristine: {{propertyTest.pristine}} </h3>
-      <h3>touched: {{propertyTest.touched}} </h3>
-      <h3>untouched: {{propertyTest.untouched}} </h3>
-      <h3>valid: {{propertyTest.valid}} </h3>
-      <h3>invalid: {{propertyTest.invalid}} </h3>
+        </div>
 
         <div class="form-check form-group">  <!--  form-group will make space around the checkBox  -->
             <input class="form-check-input" type="checkbox" name="emailOffers" id="emailOffers" [(ngModel)] = "userSettings.emailOffers">
