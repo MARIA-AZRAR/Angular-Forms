@@ -4,8 +4,10 @@
     <form #form = "ngForm" ngNativeValidate> <!-- ngForm object is assigned to the variable form ngNativeValidate is disabled by default and we should let it be disabled-->
         <div class="form-group">
         <label for="name"></label>
-        <input id="name" name="name" class="form-control" type="text" placeholder="Name" [(ngModel)] = "userSettings.name" required pattern="M.*A" minlength="3" maxlength="5">
+        <input id="name" name="name" class="form-control" type="text" placeholder="Name" [(ngModel)] = "userSettings.name" required pattern="M.*A" #classTest>
         </div>
+
+<h3> {{classTest.className}} </h3>  <!--CSS class validation we can work and style ith theses classes also properties that are associated with these classes these properties are applied to ngModel-->
 
         <div class="form-check form-group">  <!--  form-group will make space around the checkBox  -->
             <input class="form-check-input" type="checkbox" name="emailOffers" id="emailOffers" [(ngModel)] = "userSettings.emailOffers">
