@@ -1,11 +1,12 @@
 <div class="container">
     <h2>User Settings</h2>
 
-    <form #form = "ngForm" ngNativeValidate> <!-- ngForm object is assigned to the variable form ngNativeValidate is disabled by default and we should let it be disabled-->
+    <form #form = "ngForm" (ngSubmit) = "onSubmit(form)"> <!-- we don't need ngNativeValidate noe-->
         <div class="form-group">
         <label for="name"></label>
-        <input id="name" name="name" class="form-control" type="text" placeholder="Name" [(ngModel)] = "userSettings.name" required #nameField = "ngModel">
-        <div [hidden] = "nameField.valid || nameField.untouched" class="alert alert-danger">
+        <input id="name" name="name" class="form-control" type="text" placeholder="Name" [(ngModel)] = "userSettings.name" required #nameField = "ngModel" 
+               [class.field-error] = "form.submitted && nameField.invalid" > <!--Class.field-error will be assigned to a value of expression which if true class will be created if false class ill not be created now we want to show error when form is submitted -->
+        <div [hidden] = "!form.submitted || nameField.valid " class="alert alert-danger">
           Enter a Name
         </div>
         </div>

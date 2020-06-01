@@ -1,4 +1,4 @@
-.ng-invalid:not(form).ng-touched { /* not form means dnt apply border on whole form */
+.field-error { /* not form means dnt apply border on whole form */
     border: 1px solid red;
 }
 

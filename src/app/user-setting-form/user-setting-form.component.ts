@@ -1,5 +1,6 @@
 import { Component, OnInit, SystemJsNgModuleLoader } from '@angular/core';
 import { UserSettings } from '../data/user-settings-form';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-user-setting-form',
@@ -22,4 +23,7 @@ export class UserSettingFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
+   onSubmit(form: NgForm) {
+     console.log('form submitted: ' + form.submitted)
+   }
 }
