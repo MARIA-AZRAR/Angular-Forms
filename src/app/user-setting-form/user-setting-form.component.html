@@ -59,6 +59,11 @@
         <label for="date"> Date</label>
         <input type="date" id="date" name="date" class="form-control" [(ngModel)] = "userSettings.date" > <!--we gave date a name so that our form object knows that date field exists it is must-->
       </div>
+
+      <div [hidden] = "!postError" class="alert alert-danger">
+        {{postErrorMessage}}
+      </div>
+
         <button class="btn btn-primary">OK</button>    
     </form>
    

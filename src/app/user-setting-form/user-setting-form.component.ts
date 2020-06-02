@@ -20,6 +20,10 @@ export class UserSettingFormComponent implements OnInit {
   };
   
   userSettings: UserSettings = {...this.OriginalUserSettings};
+  postError: boolean = false;     //just work like flag
+  postErrorMessage: any;
+
+
   constructor(private dataService: DataService) { };
 
   ngOnInit(): void {
@@ -28,12 +32,26 @@ export class UserSettingFormComponent implements OnInit {
   onBlur(field: NgModel) {
     console.log('blur called: ' + field.valid);
   }
+
+  onHttpError(errorResponse: any){
+    console.log('error: ' , errorResponse);
+    this.postError = true;
+    this.postErrorMessage = errorResponse.error.errorMessage;  //error message is here from server side  code : response.status = 400; response.body = {errorMessage: 'Error is from your side dude i am not responsible'};
+  }
+
    onSubmit(form: NgForm) {
      console.log('form submitted: ' + form.submitted);
-     this.dataService.postUserSettingForm(this.userSettings).subscribe(
-       result => console.log('success : ', result),
-       error => console.log('error: ', error) 
-       
-     )
+
+     if(form.valid){
+      this.dataService.postUserSettingForm(this.userSettings).subscribe(
+      result => console.log('success : ', result),
+      error => this.onHttpError(error)    //we are calling a function which will run if error is returned from server   
+      )
+     } 
+     else {
+       this.postError = true;
+       this.postErrorMessage = 'Fix above Errors';
+     }
+
    }
 }
