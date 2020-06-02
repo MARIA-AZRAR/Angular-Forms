@@ -1,4 +1,4 @@
-import { Component, OnInit, SystemJsNgModuleLoader } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { UserSettings } from '../data/user-settings-form';
 import { NgForm, NgModel } from '@angular/forms';
 import { DataService } from '../data/data.service';
