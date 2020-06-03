@@ -58,7 +58,12 @@
          [(ngModel)] = "startDate" name="startDate" id="startDate" 
          bsDatepicker>
       </div>
-      {{startDate}}
+
+      <div class="form-group">
+        <label for="startTime">Start Time</label>
+        <timepicker [(ngModel)]="startTime" name = "startTime" id="startTime"></timepicker>
+      </div>
+
 
       <div [hidden] = "!postError" class="alert alert-danger">
         {{postErrorMessage}}
