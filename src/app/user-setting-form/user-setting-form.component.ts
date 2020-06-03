@@ -19,6 +19,8 @@ export class UserSettingFormComponent implements OnInit {
     notes: null,
   };
   
+  userRating: number;
+  maxRating: number = 10;
   startDate: Date;
   startTime: Date;
   singleModel = "On";  //toggle button variable

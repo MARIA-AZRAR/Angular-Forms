@@ -60,6 +60,14 @@
         <timepicker [(ngModel)]="startTime" name = "startTime" id="startTime"></timepicker>
       </div>
 
+      <div class="form-group">
+        User Rating
+        <rating [(ngModel)]="userRating" [max]="maxRating"
+         name = "userRating" id="userRating"
+          [titles]="['one','two','three']"></rating>
+      </div>
+
+      User Rating: {{userRating}}
 
       <div [hidden] = "!postError" class="alert alert-danger">
         {{postErrorMessage}}
