@@ -4,5 +4,4 @@ export interface UserSettings {
     interfaceStyle: string;
     subscriptionType: string;
     notes: string;
-    date: Date
 }

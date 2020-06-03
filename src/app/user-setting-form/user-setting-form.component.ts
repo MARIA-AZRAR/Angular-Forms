@@ -17,9 +17,9 @@ export class UserSettingFormComponent implements OnInit {
     interfaceStyle: null,
     subscriptionType: null,            //we have created an object with predefined properties
     notes: null,
-    date: null
   };
   
+  startDate: Date;
   singleModel = "On";  //toggle button variable
   userSettings: UserSettings = {...this.OriginalUserSettings};
   postError: boolean = false;     //just work like flag
@@ -30,6 +30,7 @@ export class UserSettingFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.subscriptionTypes = this.dataService.getSubscriptionTypes();  //getting data from dataService
+    this.startDate = new Date();
   }
 
   onBlur(field: NgModel) {
