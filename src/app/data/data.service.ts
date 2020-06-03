@@ -17,6 +17,11 @@ export class DataService {
     //return of(userSettings);
   }
 
+  getSubscriptionTypes(): Observable<String[]> {   //we are geeting data from data service we can also get it from JSON object using GET method
+    return of(['Monthly','Annual','Lifetime']);
+  }
+
+
 }
 
 /*   PutsReq means a little server Side Code

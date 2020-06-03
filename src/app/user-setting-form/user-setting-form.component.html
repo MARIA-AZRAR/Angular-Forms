@@ -42,10 +42,10 @@
 
         <div class="form-group">
             <label for="subscriptionType">Subscription Type</label>
-            <select class="form-control" id="subscriptionType" name="subscriptionType" [(ngModel)] = "userSettings.subscriptionType">
-              <option>Monthly</option>
-              <option>Annualy</option>
-              <option>Lifetime</option>
+            <select class="form-control" id="subscriptionType" name="subscriptionType" [(ngModel)] = "userSettings.subscriptionType" >
+              <option *ngFor = "let type of subscriptionTypes | async"> <!--As SubscriptionTypes is observable so we use async so that all data is get before showing-->
+                {{type}}
+              </option>
             </select>
           </div>
               
