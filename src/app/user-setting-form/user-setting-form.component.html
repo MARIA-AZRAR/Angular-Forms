@@ -50,13 +50,9 @@
                   rows="3" placeholder="some info" [(ngModel)] = "userSettings.notes"></textarea>    <!--Problem with this is that different vrowser will give different look we will use ng bootstrap to provide consisant look-->
       </div>      
 
-      <div class="form-group">
-        <label for="startDate">Start Date</label>
-        <input type="text" 
-        placeholder="Start Date"
-        class="form-control" 
-         [(ngModel)] = "startDate" name="startDate" id="startDate" 
-         bsDatepicker>
+      <div class="form-group">	    
+        <label for="date">Start Date</label>	        
+        <input type="date" id="date" name="date" class="form-control" [(ngModel)] = "startDate" > <!--we gave date a name so that our form object knows that date field exists it is must-->	     
       </div>
 
       <div class="form-group">
