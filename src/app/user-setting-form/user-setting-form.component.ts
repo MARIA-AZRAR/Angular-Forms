@@ -20,6 +20,7 @@ export class UserSettingFormComponent implements OnInit {
     date: null
   };
   
+  singleModel = "On";  //toggle button variable
   userSettings: UserSettings = {...this.OriginalUserSettings};
   postError: boolean = false;     //just work like flag
   postErrorMessage: any;
