@@ -37,7 +37,7 @@ export class UserSettingFormComponent implements OnInit {
     this.startTime = new Date();
   }
 
-  onBlur(field: NgModel) {
+  onBlur(field: NgModel) { 
     console.log('blur called: ' + field.valid);
   }
 
@@ -52,7 +52,7 @@ export class UserSettingFormComponent implements OnInit {
 
 
 
-     
+
     //  if(form.valid){
     //   this.dataService.postUserSettingForm(this.userSettings).subscribe(
     //   result => console.log('success : ', result),
